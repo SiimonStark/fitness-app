@@ -22,8 +22,11 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
                 sx={{ gap: { lg: '110px', xs: '50px' } }}
             >
                 {exercises.map((exercise, index) => (
-                    <p>{exercise.name}</p>
+                    <ExerciseCard key={index} exercise={exercise} />
                 ))}
+            </Stack>
+            <Stack mt="100px" alignItems="center">
+                {Exercises.length > 9 && <Pagination color="standard" shape="rounded" />}
             </Stack>
         </Box>
     )
